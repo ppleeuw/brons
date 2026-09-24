@@ -1,0 +1,36 @@
+# Nekaf
+
+> Nekaf builds AI voice agents for the automotive aftermarket: independent garages, dealerships, body shops and tire centers in the Netherlands, Germany and the United States. The agent answers every customer call, books and moves service appointments, tells callers when their car is ready and routes breakdowns by the workshop's own rules. Pricing follows results, starting from $299 per month. Based in Amsterdam. Site in English, Dutch and German.
+
+## Product
+
+- [Product overview](https://www.nekaf.ai/product): the voice agent, every channel, trust and safety
+- [Console](https://www.nekaf.ai/product/console): morning brief, every call and booking, plain-language commands
+- [Ask Nekaf](https://www.nekaf.ai/product/ask-nekaf): free answers over the workshop's own data for 90 days
+- [Agents](https://www.nekaf.ai/product/agents): service desk, booking, car-ready status, reminders, no-show recovery and more
+- [Integrations](https://www.nekaf.ai/product/integrations): phone systems, calendars, garage software and dealer management systems
+- [Pricing](https://www.nekaf.ai/pricing): outcome-based pricing, no results no cost
+
+## Specialties
+
+- [Independent garages](https://www.nekaf.ai/specialties/garages)
+- [Dealerships](https://www.nekaf.ai/specialties/dealerships)
+- [Body shops](https://www.nekaf.ai/specialties/body-shops)
+- [Tire centers](https://www.nekaf.ai/specialties/tire-centers)
+
+## Customers
+
+- [Customer stories](https://www.nekaf.ai/customers): Autobedrijf van Nuland, Broekema, Legacy Auto Clinic
+
+## Company
+
+- [About](https://www.nekaf.ai/about)
+- [Resources](https://www.nekaf.ai/resources): guides and comparisons on AI voice agents for garages and dealerships
+- [Book a demo](https://www.nekaf.ai/demo)
+
+## Optional
+
+- [Privacy policy](https://www.nekaf.ai/privacy)
+- [Terms and conditions](https://www.nekaf.ai/terms)
+- [Dutch site](https://www.nekaf.ai/nl)
+- [German site](https://www.nekaf.ai/de)
