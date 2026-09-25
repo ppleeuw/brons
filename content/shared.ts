@@ -1,9 +1,9 @@
 import { asset } from "@/lib/base";
 /** Language-independent assets and constants. */
-export const TEL_EN = "tel:+19377292674";
-export const TEL_EN_DISPLAY = "+1 937 729 2674";
-export const TEL_NL = "tel:+3197006532689";
-export const TEL_NL_DISPLAY = "+31 970 065 32689";
+export const TEL_EN = "tel:+14353240610";
+export const TEL_EN_DISPLAY = "+1 (435) 324-0610";
+export const TEL_NL = "tel:+3197006532593";
+export const TEL_NL_DISPLAY = "+31 970 065 32593";
 export const TEL = TEL_EN;
 /** Display form of a demo-line tel: link, for buttons that show the number. */
 export const telDisplay = (href: string) => (href === TEL_NL ? TEL_NL_DISPLAY : href === TEL_EN ? TEL_EN_DISPLAY : href.startsWith("tel:") ? href.slice(4) : "");

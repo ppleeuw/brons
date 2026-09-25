@@ -17,7 +17,9 @@ export default function DemoPlayer({ d, lang }: { d: DemoSection; lang: string }
   const [playing, setPlaying] = useState(false);
   const [t, setT] = useState(0);
   const [hasAudio, setHasAudio] = useState<boolean | null>(null);
-  const total = d.transcript[d.transcript.length - 1].at + 6;
+  /* the real length once the recording has loaded; until then the last line plus a few seconds */
+  const known = hasAudio ? audio.current?.duration : undefined;
+  const total = known && isFinite(known) ? known : d.transcript[d.transcript.length - 1].at + 6;
 
   useEffect(() => {
     const a = audio.current;

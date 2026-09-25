@@ -97,10 +97,13 @@ Both sites run this way. For a new domain:
   Marieke, Dave, generated portraits in `public/assets/gen/person-*.webp`), the customer stories and every number on the
   proof section and the story pages are illustrative and were not measured at these businesses. Swap them for real
   customers, with permission, before the site goes live (`content/*.ts`, `content/shared.ts`, `content/articles.json`).
-- **Demo line and sample call.** The demo phone numbers (`content/shared.ts`) and the recordings
-  `public/assets/demo-call-{en,nl,de}.mp3` are placeholders from an earlier project, so the transcript under "Hear Nekaf take
-  a real call" still follows an eye-exam rebooking. Replace the files and the `demo.transcript` arrays in `content/en.ts`,
-  `nl.ts`, `de.ts` together (timings in seconds); `node tooling/transcribe.js` can produce a timed transcript from a new recording.
+- **Sample call.** The recordings `public/assets/demo-call-{en,nl,de}.mp3` are the September 2026 demo calls (the German
+  site plays the English one) and the `demo.transcript` arrays in `content/en.ts`, `nl.ts`, `de.ts` follow them (timings in
+  seconds). The agent introduces itself with the Brons name in the audio, so on the Nekaf site the transcript and the recording
+  differ in that one word. When replacing a recording, trim the lead-in, update the transcript and the `duration` label
+  together, and rerun `tooling/og.js` for the home social images, which show the demo block.
+- **Demo lines.** `content/shared.ts` holds the Dutch and US demo numbers; the structured data in `app/[[...slug]]/page.tsx`
+  repeats them.
 - **Founder bios** (`content/*.ts`, `about.founders`): drafted from public profiles, to be checked by both founders.
 - **Contact and booking.** `hello@nekaf.ai`, `privacy@nekaf.ai`, `legal@nekaf.ai`, the LinkedIn page and `app.nekaf.ai`
   (sign-in) are placeholders. The demo page shows a "Send a demo request" mail button until Cal.com links are filled in at
