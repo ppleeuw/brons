@@ -26,9 +26,11 @@ export default function DemoPlayer({ d, lang }: { d: DemoSection; lang: string }
     if (!a) return;
     const ok = () => setHasAudio(true);
     const bad = () => setHasAudio(false);
+    const ended = () => { setPlaying(false); setT(0); };
     a.addEventListener("loadedmetadata", ok);
     a.addEventListener("error", bad);
-    return () => { a.removeEventListener("loadedmetadata", ok); a.removeEventListener("error", bad); };
+    a.addEventListener("ended", ended);
+    return () => { a.removeEventListener("loadedmetadata", ok); a.removeEventListener("error", bad); a.removeEventListener("ended", ended); };
   }, []);
 
   useEffect(() => {
@@ -36,7 +38,8 @@ export default function DemoPlayer({ d, lang }: { d: DemoSection; lang: string }
     const start = performance.now() - t * 1000;
     const tick = () => {
       const a = audio.current;
-      const now = hasAudio && a && !a.paused ? a.currentTime : (performance.now() - start) / 1000;
+      /* follow the recording as soon as play() was accepted (it reports 0 until the first bytes arrive); timers only if it failed */
+      const now = a && !a.paused && hasAudio !== false ? a.currentTime : (performance.now() - start) / 1000;
       setT(now);
       if (now >= total) { setPlaying(false); setT(0); if (a) { a.pause(); a.currentTime = 0; } return; }
       timer.current = requestAnimationFrame(tick);
@@ -49,7 +52,13 @@ export default function DemoPlayer({ d, lang }: { d: DemoSection; lang: string }
   const toggle = () => {
     const a = audio.current;
     if (playing) { setPlaying(false); a?.pause(); return; }
-    if (hasAudio && a) { a.currentTime = t; a.play().catch(() => {}); }
+    if (a && hasAudio !== false) {
+      try {
+        if (a.readyState === 0) a.load(); /* preload is off, so the recording is fetched on the first click */
+        if (t > 0 && a.readyState > 0) a.currentTime = t;
+        const p = a.play(); if (p) p.catch(() => setHasAudio(false));
+      } catch { setHasAudio(false); }
+    }
     setPlaying(true);
   };
   const current = d.transcript.reduce((acc, row, i) => (t >= row.at ? i : acc), -1);

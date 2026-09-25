@@ -435,7 +435,7 @@ const de: Site = {
       duration: "1:42", play: "Beispielanruf abspielen", stop: "Stopp", hint: "Das Transkript folgt dem Anruf.",
       call: callDemo, note: "Es ist Nekaf, das antwortet.",
       transcript: [
-        { who: "agent", at: 0, text: "Hi, I'm Alex, Nekaf's digital assistant. This call may be recorded. How can I help?" },
+        { who: "agent", at: 0, text: "Hi, I'm Alex, Brons Cars' digital assistant. This call may be recorded. How can I help?" },
         { who: "caller", at: 6.4, text: "Hi Alex, this is Peter speaking. I was wondering whether I could come in for a checkup on my car sometime next week." },
         { who: "agent", at: 15.5, text: "I understand you're looking to schedule a checkup for your car next week. I can help you with that. I've found your details on the number you're calling from. Could you confirm your name for me, Peter?" },
         { who: "caller", at: 25.6, text: "Yeah, that's Peter Johnson." },

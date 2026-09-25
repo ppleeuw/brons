@@ -435,7 +435,7 @@ const nl: Site = {
       duration: "0:30", play: "Beluister het voorbeeldgesprek", stop: "Stop", hint: "Het transcript volgt het gesprek.",
       call: callDemo, note: "Het is Nekaf die opneemt.",
       transcript: [
-        { who: "agent", at: 0, text: "Hi, ik ben Alex, de digitale assistent van Nekaf. Dit gesprek kan worden opgenomen. Waarmee kan ik je helpen?" },
+        { who: "agent", at: 0, text: "Hi, ik ben Alex, de digitale assistent van Brons Cars. Dit gesprek kan worden opgenomen. Waarmee kan ik je helpen?" },
         { who: "caller", at: 6.5, text: "Hey Alex, je spreekt met Peter. Ik vroeg me af of ik een APK kon inplannen." },
         { who: "agent", at: 14, text: "Hallo Peter, leuk je te spreken. Ik help je daar graag mee. Ik zie dat je gegevens al gekoppeld zijn aan het nummer waarmee je belt. Op welke dag en welk tijdstip zou je graag langskomen?" },
       ],
