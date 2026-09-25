@@ -431,13 +431,19 @@ const nl: Site = {
     demo: {
       title: "Hoor Nekaf een echt gesprek voeren",
       lede: "Druk op afspelen, of bel de demolijn en probeer het zelf.",
-      sampleLabel: "Voorbeeldgesprek · een APK inplannen",
-      duration: "0:30", play: "Beluister het voorbeeldgesprek", stop: "Stop", hint: "Het transcript volgt het gesprek.",
+      sampleLabel: "Voorbeeldgesprek · een APK inplannen en een vraag over bandenspanning",
+      duration: "1:47", play: "Beluister het voorbeeldgesprek", stop: "Stop", hint: "Het transcript volgt het gesprek.",
       call: callDemo, note: "Het is Nekaf die opneemt.",
       transcript: [
         { who: "agent", at: 0, text: "Hi, ik ben Alex, de digitale assistent van Brons Cars. Dit gesprek kan worden opgenomen. Waarmee kan ik je helpen?" },
-        { who: "caller", at: 6.5, text: "Hey Alex, je spreekt met Peter. Ik vroeg me af of ik een APK kon inplannen." },
-        { who: "agent", at: 14, text: "Hallo Peter, leuk je te spreken. Ik help je daar graag mee. Ik zie dat je gegevens al gekoppeld zijn aan het nummer waarmee je belt. Op welke dag en welk tijdstip zou je graag langskomen?" },
+        { who: "caller", at: 6.8, text: "Hey Alex, met Thomas spreek je. Ik zou graag volgende week donderdag om 15:00 uur een APK willen inplannen, als het kan." },
+        { who: "agent", at: 15.7, text: "Hallo Thomas, leuk je te spreken. Ik help je graag met het inplannen van je APK voor volgende week donderdag om 15:00 uur. Ik zie dat je gegevens al gekoppeld zijn aan het nummer waarmee je belt, dus ik kan die afspraak direct voor je bevestigen. Ik stuur je zo een bevestiging per sms op dit nummer. Is er verder nog iets waar ik je mee kan helpen?" },
+        { who: "caller", at: 33.3, text: "Ja, ik heb een Mercedes C-Klasse uit 2001. Wat is daar de bandenspanning van?" },
+        { who: "agent", at: 39.8, text: "Voor een Mercedes C-Klasse uit 2001 hangt de juiste bandenspanning af van de exacte uitvoering en de bandenmaat, dus ik wil je geen verkeerd getal geven. Je vindt de specifieke waarde meestal op een sticker in de deurstijl van de bestuurdersdeur of in het instructieboekje van je auto. Als je wilt, kan ik tijdens je APK-afspraak volgende week donderdag vragen of een monteur even voor je kijkt of de spanning goed staat." },
+        { who: "caller", at: 63, text: "Oké, dank je. Maar ik ga zo ook nog zelf langs de garage. Dus als je toch even ongeveer een range wilt geven, gemiddeld, wat het is." },
+        { who: "agent", at: 73.8, text: "Voor een Mercedes C-Klasse uit die periode ligt de bandenspanning doorgaans tussen de twee en drie bar, afhankelijk van of je met weinig of veel belading rijdt. Omdat het per bandenmaat en motorisering net even anders kan zijn, is het verstandig om bij de garage even de sticker in de deurstijl te checken voor de exacte waarde. Zo voorkom je dat je banden te hard of te zacht staan, wat belangrijk is voor je veiligheid en bandenslijtage." },
+        { who: "caller", at: 97.7, text: "Oké, super, dat was het. Dank je wel." },
+        { who: "agent", at: 101.7, text: "Graag gedaan, Thomas. Fijne dag nog en tot volgende week donderdag bij je APK-afspraak." },
       ],
     },
     bento: {
