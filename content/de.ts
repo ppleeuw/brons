@@ -1,7 +1,7 @@
 import type { Site, SpecialtyPage, Story } from "./types";
 import { LEGAL } from "./legal";
 import { COOKIES, SAFETY } from "./policies";
-import { BADGES, CALENDLY, CUSTOMER_LOGOS, EMAIL, INTEGRATION_LOGOS, LINKEDIN, PEOPLE, PHOTOS, SIGN_IN, TEL, TEL_DISPLAY, VIDEOS } from "./shared";
+import { BOOKING_BRAND, BADGES, CALENDLY, CUSTOMER_LOGOS, EMAIL, INTEGRATION_LOGOS, LINKEDIN, PEOPLE, PHOTOS, SIGN_IN, TEL, TEL_DISPLAY, VIDEOS } from "./shared";
 
 const callDemo = { label: "Demo-Hotline anrufen", href: TEL };
 const contactSales = { label: "Vertrieb kontaktieren", href: "/demo" };
@@ -794,7 +794,7 @@ const de: Site = {
       { icon: "shield", text: "Pannen und Warnleuchten nach Ihren Regeln weitergeleitet, mit Zusammenfassung." },
     ],
     trustedTitle: "Vertrauen von",
-    booking: { title: "Zeitfenster wählen", text: "30 Minuten mit Peter-Paul. Wir hören uns Ihr Anrufvolumen an und zeigen, was Nekaf mit Ihren Anrufen tun würde.", fallback: { label: "Demo-Anfrage senden", href: CALENDLY, external: true }, note: "Unverbindlich." },
+    booking: { title: "Zeitfenster wählen", text: "30 Minuten mit Peter-Paul. Wir hören uns Ihr Anrufvolumen an und zeigen, was Nekaf mit Ihren Anrufen tun würde.", fallback: { label: BOOKING_BRAND ? "Kalender in neuem Tab öffnen" : "Demo-Anfrage senden", href: CALENDLY, external: true }, note: "Unverbindlich." },
   },
 
   legal: { ...LEGAL.de, cookies: COOKIES.de, safety: SAFETY.de },

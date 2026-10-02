@@ -1,7 +1,7 @@
 import type { Site, SpecialtyPage, Story } from "./types";
 import { LEGAL } from "./legal";
 import { COOKIES, SAFETY } from "./policies";
-import { BADGES, CALENDLY, CUSTOMER_LOGOS, EMAIL, INTEGRATION_LOGOS, LINKEDIN, PEOPLE, PHOTOS, SIGN_IN, TEL, TEL_DISPLAY, VIDEOS } from "./shared";
+import { BOOKING_BRAND, BADGES, CALENDLY, CUSTOMER_LOGOS, EMAIL, INTEGRATION_LOGOS, LINKEDIN, PEOPLE, PHOTOS, SIGN_IN, TEL, TEL_DISPLAY, VIDEOS } from "./shared";
 
 const callDemo = { label: "Call the demo line", href: TEL };
 const contactSales = { label: "Contact sales", href: "/demo" };
@@ -794,7 +794,7 @@ const en: Site = {
       { icon: "shield", text: "Breakdowns and warning lights routed by your rules, with a summary." },
     ],
     trustedTitle: "Trusted by",
-    booking: { title: "Choose a slot", text: "30 minutes with Peter-Paul. We hear your call volume and show what Nekaf would do with your calls.", fallback: { label: "Send a demo request", href: CALENDLY, external: true }, note: "No obligations." },
+    booking: { title: "Choose a slot", text: "30 minutes with Peter-Paul. We hear your call volume and show what Nekaf would do with your calls.", fallback: { label: BOOKING_BRAND ? "Open the calendar in a new tab" : "Send a demo request", href: CALENDLY, external: true }, note: "No obligations." },
   },
 
   legal: { ...LEGAL.en, cookies: COOKIES.en, safety: SAFETY.en },

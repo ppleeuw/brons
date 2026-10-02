@@ -5,6 +5,7 @@ import type { Site } from "@/content/types";
 import { BTN_PRIMARY, CONTAINER, SECTION, SM } from "./ui";
 import { Icon } from "./Icons";
 import { calLink, loadCal , CAL_CONFIG } from "@/components/CalBooking";
+import { GOOGLE_BOOKING_EMBED } from "@/content/shared";
 
 /** Demo page: one job, pick a slot. Inline Cal.com calendar when a link is configured, otherwise a single button to the booking page. */
 export default function DemoBooking({ d, logos, lang }: { d: Site["demo"]; logos: { src: string; alt: string }[]; lang: string }) {
@@ -50,6 +51,15 @@ export default function DemoBooking({ d, logos, lang }: { d: Site["demo"]; logos
             </div>
             {link ? (
               <div id="cal-inline" className="mt-6 min-h-[560px] w-full overflow-hidden rounded-2xl" />
+            ) : GOOGLE_BOOKING_EMBED ? (
+              <>
+                {/* Google Calendar appointment schedule: visitors pick any free slot in the founder calendar */}
+                <iframe src={GOOGLE_BOOKING_EMBED} title={d.booking.title} loading="lazy" className="mt-6 h-[720px] w-full rounded-2xl border-0 bg-white" />
+                <div className="mt-4 flex flex-col items-center gap-2">
+                  <a className="text-label-md text-secondary underline underline-offset-4 hover:text-brand-primary" href={d.booking.fallback.href} target="_blank" rel="noopener noreferrer">{d.booking.fallback.label}</a>
+                  <p className="text-label-sm text-secondary">{d.booking.note}</p>
+                </div>
+              </>
             ) : (
               <div className="mt-8 flex flex-col items-center gap-3">
                 <a className={BTN_PRIMARY + SM} href={d.booking.fallback.href} target="_blank" rel="noopener noreferrer">{d.booking.fallback.label}</a>

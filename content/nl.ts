@@ -1,7 +1,7 @@
 import type { Site, SpecialtyPage, Story } from "./types";
 import { LEGAL } from "./legal";
 import { COOKIES, SAFETY } from "./policies";
-import { BADGES, CALENDLY, CUSTOMER_LOGOS, EMAIL, INTEGRATION_LOGOS, LINKEDIN, PEOPLE, PHOTOS, SIGN_IN, TEL_NL as TEL, TEL_NL_DISPLAY as TEL_DISPLAY, VIDEOS } from "./shared";
+import { BOOKING_BRAND, BADGES, CALENDLY, CUSTOMER_LOGOS, EMAIL, INTEGRATION_LOGOS, LINKEDIN, PEOPLE, PHOTOS, SIGN_IN, TEL_NL as TEL, TEL_NL_DISPLAY as TEL_DISPLAY, VIDEOS } from "./shared";
 
 const callDemo = { label: "Bel de demolijn", href: TEL };
 const contactSales = { label: "Neem contact op", href: "/demo" };
@@ -792,7 +792,7 @@ const nl: Site = {
       { icon: "shield", text: "Pech en waarschuwingslampjes doorgezet volgens uw regels, met een samenvatting." },
     ],
     trustedTitle: "Vertrouwd door",
-    booking: { title: "Kies een tijdslot", text: "30 minuten met Peter-Paul. We horen uw belvolume en laten zien wat Nekaf met uw oproepen zou doen.", fallback: { label: "Stuur een demoverzoek", href: CALENDLY, external: true }, note: "Vrijblijvend." },
+    booking: { title: "Kies een tijdslot", text: "30 minuten met Peter-Paul. We horen uw belvolume en laten zien wat Nekaf met uw oproepen zou doen.", fallback: { label: BOOKING_BRAND ? "Open de agenda in een nieuw tabblad" : "Stuur een demoverzoek", href: CALENDLY, external: true }, note: "Vrijblijvend." },
   },
 
   legal: { ...LEGAL.nl, cookies: COOKIES.nl, safety: SAFETY.nl },

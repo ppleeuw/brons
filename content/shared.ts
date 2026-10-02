@@ -9,8 +9,12 @@ export const TEL = TEL_EN;
 export const telDisplay = (href: string) => (href === TEL_NL ? TEL_NL_DISPLAY : href === TEL_EN ? TEL_EN_DISPLAY : href.startsWith("tel:") ? href.slice(4) : "");
 export const TEL_DISPLAY = TEL_EN_DISPLAY;
 export const EMAIL = "hello@nekaf.ai";
-/** Booking link used by the demo page until a Cal.com link is configured in CAL_LINKS. */
-export const CALENDLY = "mailto:hello@nekaf.ai?subject=Demo%20request";
+/** Booking page in a new tab (fallback link under the embedded calendar). */
+/** Brons books demos in the founder Google Calendar; Nekaf takes demo requests by e-mail. */
+export const BOOKING_BRAND = process.env.NEXT_PUBLIC_BRAND === "brons";
+export const CALENDLY = BOOKING_BRAND ? "https://calendar.app.google/UkRbf8KFxrTSum3h8" : "mailto:hello@nekaf.ai?subject=Demo%20request";
+/** Google Calendar appointment schedule, embedded on the demo page (any free slot in the founder calendar). */
+export const GOOGLE_BOOKING_EMBED = BOOKING_BRAND ? "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2JNKHLopjrU1w6r0oDwVJVl_owXdBfzK9_XJjzsh_FjWjEyG4PpU5zIYamhwtYLjIK59nUFDuK?gv=true" : "";
 export const LINKEDIN = "https://www.linkedin.com/company/nekaf";
 export const SIGN_IN = "https://app.nekaf.ai";
 
