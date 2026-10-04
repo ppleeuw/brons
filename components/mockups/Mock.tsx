@@ -6,6 +6,9 @@ import * as C from "./Cards";
 import * as H from "./Home";
 import { Fill } from "./Fit";
 import Wheel from "./Wheel";
+import { GlassAgent, IS_BRONS, RulesCard } from "./BronsCards";
+/** Agent tiles: waveform for Nekaf, glass agent card for Brons. */
+const AgentTile = (p: { accent: string; caption: string }) => (IS_BRONS ? <GlassAgent {...p} /> : <VoiceWave {...p} />);
 import { AgentAvatar, Bubble, Card, Pill, WrenchIcon, dottedBg } from "./ui";
 
 /** Blurred photographic-looking gradient backgrounds (replace blurred stills behind UI). */
@@ -171,15 +174,15 @@ function IconPillDark({ label, bg }: { label: string; bg: CSSProperties }) {
 }
 
 const REGISTRY: Record<string, () => ReactNode> = {
-  "wheel": () => <div className="flex h-full w-full items-center justify-center bg-white"><Wheel /></div>,
-  "agent-frontdesk": () => <VoiceWave accent="#4faf62" caption="[Service desk]: you're booked for Thursday at 9:40" />,
-  "agent-orders": () => <VoiceWave accent="#4584c6" caption="[Car-ready status]: your car is ready for pickup" />,
-  "agent-recall": () => <VoiceWave accent="#f96205" caption="[Reminder]: your inspection is due next month, shall I book it?" />,
-  "agent-noshow": () => <VoiceWave accent="#7644a6" caption="[No-show recovery]: I can move you to tomorrow at 10:20" />,
-  "agent-urgent": () => <VoiceWave accent="#e94e2a" caption="[Breakdown]: transferring you to the mechanic on duty now" />,
-  "agent-postop": () => <VoiceWave accent="#4faf62" caption="[Post-repair]: is the noise gone and is the car running fine?" />,
-  "agent-reorder": () => <VoiceWave accent="#4584c6" caption="[Tire swap]: your winter set is in storage, Friday at 9:20?" />,
-  "agent-referral": () => <VoiceWave accent="#7644a6" caption="[Claim intake]: the claim is complete, booking the estimate now" />,
+  "wheel": () => (IS_BRONS ? <RulesCard /> : <div className="flex h-full w-full items-center justify-center bg-white"><Wheel /></div>),
+  "agent-frontdesk": () => <AgentTile accent="#4faf62" caption="[Service desk]: you're booked for Thursday at 9:40" />,
+  "agent-orders": () => <AgentTile accent="#4584c6" caption="[Car-ready status]: your car is ready for pickup" />,
+  "agent-recall": () => <AgentTile accent="#f96205" caption="[Reminder]: your inspection is due next month, shall I book it?" />,
+  "agent-noshow": () => <AgentTile accent="#7644a6" caption="[No-show recovery]: I can move you to tomorrow at 10:20" />,
+  "agent-urgent": () => <AgentTile accent="#e94e2a" caption="[Breakdown]: transferring you to the mechanic on duty now" />,
+  "agent-postop": () => <AgentTile accent="#4faf62" caption="[Post-repair]: is the noise gone and is the car running fine?" />,
+  "agent-reorder": () => <AgentTile accent="#4584c6" caption="[Tire swap]: your winter set is in storage, Friday at 9:20?" />,
+  "agent-referral": () => <AgentTile accent="#7644a6" caption="[Claim intake]: the claim is complete, booking the estimate now" />,
   "story-vannuland": () => <BubbleScene bg={BG.green} lines={[{ side: "user", name: "Customer", text: "Is my car ready? I dropped it off this morning." }, { side: "agent", name: "Autobedrijf van Nuland", text: "It is on the test drive now, ready from 4 PM. We’re open until 6 today." }, { side: "user", name: "Customer", text: "Great, I’ll come by after work." }]} />,
   "story-broekema": () => <BubbleScene bg={BG.navy} lines={[{ side: "user", name: "Customer", text: "I need to move my inspection. Is there anything next week?" }, { side: "agent", name: "Broekema", text: "Yes. Sven has Tuesday at 10:20 in Zweeloo. Shall I move you there?" }]} />,
   "story-legacy": () => <BubbleScene bg={BG.grey} lines={[{ side: "user", name: "Customer", text: "What did the brake quote for my truck come to?" }, { side: "agent", name: "Legacy Auto Clinic", text: "$489 for front pads and discs, parts and labor included. Shall I book the fitting?" }]} />,

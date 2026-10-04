@@ -97,3 +97,31 @@ html[data-brand="brons"] a[aria-label="Homepage"]{color:var(--b-ink) !important}
 html[data-brand="brons"] footer a[aria-label="Homepage"]{color:#fff !important}
 html[data-brand="brons"] .bg-agent-studio{background-color:var(--b-canvas) !important}
 html[data-brand="brons"] .bg-agent-studio .to-white,html[data-brand="brons"] .from-white{--tw-gradient-to:var(--b-canvas);--tw-gradient-from:var(--b-canvas)}
+
+/* result cards: saturated metric cards with white type */
+html[data-brand="brons"] .proof-card{border:0 !important;box-shadow:none !important;color:#fff;min-height:260px;justify-content:flex-end}
+html[data-brand="brons"] .proof-card:nth-child(6n+1){background:#5754ff !important}
+html[data-brand="brons"] .proof-card:nth-child(6n+2){background:#2d4a73 !important}
+html[data-brand="brons"] .proof-card:nth-child(6n+3){background:#1ec677 !important}
+html[data-brand="brons"] .proof-card:nth-child(6n+4){background:#cb47ff !important}
+html[data-brand="brons"] .proof-card:nth-child(6n+5){background:#ff8847 !important}
+html[data-brand="brons"] .proof-card:nth-child(6n+6){background:#131313 !important}
+html[data-brand="brons"] .proof-card .tabular-nums{background:none !important;-webkit-background-clip:border-box;background-clip:border-box;color:#fff !important}
+html[data-brand="brons"] .proof-card .line-through{color:rgba(255,255,255,.6) !important;text-decoration-color:rgba(255,255,255,.6) !important}
+html[data-brand="brons"] .proof-card :is(.text-primary,.text-secondary,.text-gray-350){color:#fff !important}
+html[data-brand="brons"] .proof-card .text-secondary{opacity:.82}
+html[data-brand="brons"] .proof-card>div:first-child{border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:18px;order:0}
+
+/* bento cards: dreamlike photographs under the animated UI */
+html[data-brand="brons"] :is(.bg-bento-mint,.bg-bento-navy,.bg-bento-plum,.bg-bento-amber){background-size:cover !important;background-position:center !important}
+html[data-brand="brons"] .bg-bento-mint{background-image:linear-gradient(180deg,rgba(244,240,255,.55),rgba(244,240,255,0) 40%,rgba(244,240,255,0) 62%,rgba(244,240,255,.9)),url(/assets-brons/bento-green.webp) !important}
+html[data-brand="brons"] .bg-bento-navy{background-image:linear-gradient(180deg,rgba(29,26,92,.55),rgba(29,26,92,.05) 40%,rgba(29,26,92,.55)),url(/assets-brons/bento-blue.webp) !important}
+html[data-brand="brons"] .bg-bento-plum{background-image:linear-gradient(180deg,rgba(40,10,60,.55),rgba(40,10,60,.05) 40%,rgba(40,10,60,.6)),url(/assets-brons/bento-pink.webp) !important}
+html[data-brand="brons"] .bg-bento-amber{background-image:linear-gradient(180deg,rgba(90,40,20,.5),rgba(90,40,20,.05) 40%,rgba(90,40,20,.55)),url(/assets-brons/bento-orange.webp) !important}
+
+/* agent tiles section: dark with a violet glow, readable type */
+html[data-brand="brons"] .tiles-block :is(h3,.text-primary){color:#fff !important}
+html[data-brand="brons"] .tiles-block .text-secondary{color:#a1a1aa !important}
+html[data-brand="brons"] .tiles-block .border-boh{border-color:rgba(255,255,255,.7) !important;color:#fff !important}
+html[data-brand="brons"] .tiles-block figure{background:transparent !important;border-radius:20px}
+html[data-brand="brons"] .tiles-block::before{inset:auto 10% -50% 10% !important}

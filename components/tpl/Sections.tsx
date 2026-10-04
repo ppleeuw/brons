@@ -1,4 +1,5 @@
 import Img from "./Img";
+import { IS_BRONS } from "@/components/mockups/BronsCards";
 import { Fragment } from "react";
 import type { Bubble, CardsSection, CTASection, FeatureSplit, HeroSection, LogoStrip, ProofSection, QuoteBand, RelatedCard, StepsSection, TilesSection, TrustSection, VideoQuote, BigQuote, AccordionItem } from "@/content/types";
 import Carousel from "@/components/Carousel";
@@ -163,7 +164,7 @@ export function TilesSection({ s, lang, z = 3 }: { s: TilesSection; lang: string
     </article>
   );
   return (
-    <Section theme="theme-base" z={z}>
+    <Section theme={IS_BRONS ? "theme-tech" : "theme-base"} z={z} className="tiles-block">
       <CenterHead title={s.title} lede={s.lede} cta={s.cta ? { ...s.cta, href: L(lang, s.cta.href) } : undefined} size="md" />
       <div className={"grid-cols-12 gap-grid-gutter gap-y-8 hidden " + (cols === 2 ? "md:grid" : "lg:grid")}>
         {s.tiles.map((t) => (
@@ -343,7 +344,7 @@ export function ProofSectionBlock({ p }: { p: ProofSection }) {
       <CenterHead title={p.title} lede={p.lede} />
       <div className="grid grid-cols-12 gap-grid-gutter gap-y-4">
         {p.outcomes.map((o) => (
-          <div key={o.label} className="col-span-12 flex flex-col gap-4 rounded-2xl bg-white p-6 ring-1 ring-green-500/15 shadow-[0_28px_60px_-44px_rgba(0,104,56,0.45)] md:col-span-6 md:p-8 xl:col-span-4 theme-tech:bg-gray-700">
+          <div key={o.label} className="proof-card col-span-12 flex flex-col gap-4 rounded-2xl bg-white p-6 ring-1 ring-green-500/15 shadow-[0_28px_60px_-44px_rgba(0,104,56,0.45)] md:col-span-6 md:p-8 xl:col-span-4 theme-tech:bg-gray-700">
             <div className="flex items-end gap-3">
               {o.before && <span className="mb-1 text-headline-sm text-gray-350 line-through decoration-gray-350 tabular-nums">{o.before}</span>}
               {o.before && <Chevron className="mb-3 h-4 w-4 -rotate-90 text-gray-350" />}

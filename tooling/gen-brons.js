@@ -34,6 +34,10 @@ const STILLS = {
   'img-team': ['img', '16:9', 'Five garage employees in matching dark work clothes, seen from the knees up, stand together laughing in front of an open workshop door, lavender sky above the building, candid, medium shot.'],
   'img-dealer': ['img', '16:9', 'A service advisor with a tablet walks around a customer car with its owner in a bright dealership service lane, lavender light through glass walls.'],
   'img-bodyshop': ['img', '16:9', 'A painter in a white protective suit and mask sprays a car door inside a softly lit paint booth, lavender and peach mist in the air, seen from the side, medium shot.'],
+  'bento-green': ['bento', '21:9', 'A quiet pastel workshop at dusk seen from outside through a wide open door, a car raised on a lift glowing softly inside, large lavender sky above, pale moon, lots of empty space on the left.'],
+  'bento-blue': ['bento', '3:4', 'Close-up of a hand placing a car key on a pale minimal counter, soft lavender light, shallow depth of field, lots of empty space at the top.'],
+  'bento-pink': ['bento', '3:4', 'A smartphone resting in the cupholder of a car interior, soft violet and pink light through the windscreen, dreamy, lots of empty space at the top.'],
+  'bento-orange': ['bento', '3:4', 'A smiling driver seen through the side window of a car, warm peach and orange evening light, dreamy, lots of empty space at the top.'],
   'person-bas': ['person', '3:4', 'A Dutch garage owner in his fifties with short grey hair and a friendly weathered face, dark blue work polo, standing in his workshop.'],
   'person-marieke': ['person', '3:4', 'A Dutch service manager in her early forties with shoulder-length brown hair, grey blouse, standing in a bright modern garage reception with blank walls and no signs.'],
   'person-dave': ['person', '3:4', 'An American auto shop manager in his forties with a short beard, red work shirt, standing in front of open bay doors.'],
@@ -50,8 +54,9 @@ async function still(key) {
   const raw = `${TMP}/${key}-raw.jpg`; await download(url, raw);
   if (where === 'person') await sharp(raw).resize(1200, 1500, { fit: 'cover', position: 'attention' }).webp({ quality: 84 }).toFile(`${G}/${key}.webp`);
   else {
-    await sharp(raw).resize(1920, 1080, { fit: 'cover' }).jpeg({ quality: 90 }).toFile(`${TMP}/${key}.jpg`);
-    if (where === 'hero') await sharp(`${TMP}/${key}.jpg`).resize(1280, 720).jpeg({ quality: 82 }).toFile(`${M}/${key}-poster.jpg`);
+    if (where !== 'bento') await sharp(raw).resize(1920, 1080, { fit: 'cover' }).jpeg({ quality: 90 }).toFile(`${TMP}/${key}.jpg`);
+    if (where === 'bento') await sharp(raw).resize(key === 'bento-green' ? 2200 : 1000, key === 'bento-green' ? 990 : 1250, { fit: 'cover' }).webp({ quality: 78 }).toFile(`${P}/${key}.webp`);
+    else if (where === 'hero') await sharp(`${TMP}/${key}.jpg`).resize(1280, 720).jpeg({ quality: 82 }).toFile(`${M}/${key}-poster.jpg`);
     else await sharp(`${TMP}/${key}.jpg`).resize(1600, 900).webp({ quality: 80 }).toFile(where === 'gen' ? `${G}/${key}.webp` : `${P}/${key}.webp`);
   }
   mark(key); console.log('img ok', key);
