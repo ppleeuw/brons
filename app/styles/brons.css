@@ -1,0 +1,99 @@
+/* Brons theme. Only inlined when NEXT_PUBLIC_BRAND=brons (see app/layout.tsx); every rule is scoped to
+   html[data-brand="brons"]. Look and feel: light grey canvas, inset rounded panels, near-black dark sections with
+   violet glow, indigo accent, black pill buttons with a warm-to-violet edge, geometric sans with tight tracking. */
+
+@font-face{font-family:"Figtree";font-style:normal;font-weight:400 600;font-display:swap;src:url(../../public/fonts/figtree-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Figtree";font-style:normal;font-weight:400 600;font-display:swap;src:url(../../public/fonts/figtree-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+html[data-brand="brons"]{
+  --font-gtamerica:"Figtree","Helvetica Neue",Arial,sans-serif;
+  --font-sans:"Figtree","Helvetica Neue",Arial,sans-serif;
+  --b-ink:#131313; --b-ink-2:#4e4e56; --b-muted:#898994; --b-canvas:#f4f4f5; --b-line:#e4e4e7;
+  --b-indigo:#5754ff; --b-indigo-2:#7370ff; --b-dark:#0a0a0b; --b-dark-2:#1c1c1f;
+  --b-edge:linear-gradient(90deg,#ff8847,#d770ff 50%,#5754ff);
+  --b-wash:linear-gradient(225deg,#ffe4d6,#d7d6ff);
+  --color-gray-100:#f4f4f5; --color-gray-150:#ececee; --color-gray-200:#e4e4e7; --color-gray-250:#d4d4d8;
+  --color-gray-300:#a1a1aa; --color-gray-350:#6b6b76; --color-gray-400:#4e4e56; --color-gray-700:#131313; --color-black:#0a0a0b;
+}
+html[data-brand="brons"] body,html[data-brand="brons"] body *{font-family:var(--font-sans)}
+html[data-brand="brons"] body{background:var(--b-canvas)}
+html[data-brand="brons"] .font-mono,html[data-brand="brons"] .font-mono *{font-family:var(--font-gtamerica-mono),ui-monospace,monospace}
+
+/* type: medium weight, tight tracking */
+html[data-brand="brons"] :is(h1,h2,.text-headline-xl,.text-headline-lg,.text-display-xl,.text-display-sm){font-weight:500;letter-spacing:-.035em}
+html[data-brand="brons"] :is(h3,.text-headline-md,.text-headline-sm){font-weight:450;letter-spacing:-.02em}
+html[data-brand="brons"] .font-logo{font-family:"Figtree",sans-serif !important;font-weight:600;letter-spacing:-.04em;font-variation-settings:normal}
+
+/* canvas: sections sit on light grey, cards stay white */
+html[data-brand="brons"] .bg-white.relative.py-section-padding,html[data-brand="brons"] .theme-base.flex.min-h-screen{background-color:var(--b-canvas)}
+html[data-brand="brons"] .theme-product.relative.py-section-padding{background-color:#ececee}
+
+/* buttons: black pill with a warm-to-violet edge; outline buttons in indigo */
+html[data-brand="brons"] .bg-surface-primary-500{background:linear-gradient(#0a0a0b,#303036) padding-box,var(--b-edge) border-box !important;border:1.5px solid transparent !important;color:#fff !important;box-shadow:0 6px 18px -8px rgba(87,84,255,.45)}
+html[data-brand="brons"] .bg-surface-primary-500:hover{background:linear-gradient(#26262b,#3a3a42) padding-box,var(--b-edge) border-box !important}
+html[data-brand="brons"] .border-boh{border-color:var(--b-indigo) !important;color:var(--b-indigo) !important}
+html[data-brand="brons"] .border-boh:hover{background:rgba(87,84,255,.06) !important}
+html[data-brand="brons"] .bg-surface-tertiary-100.rounded-full,html[data-brand="brons"] a.bg-surface-tertiary-100{background:#fff !important;border:1px solid var(--b-ink);color:var(--b-ink) !important}
+html[data-brand="brons"] .text-brand-primary,html[data-brand="brons"] a:hover .text-brand-primary{color:var(--b-indigo) !important}
+
+/* home hero: an inset rounded panel with dark text on the light dreamlike photo, like the reference */
+html[data-brand="brons"] main>header:first-child{margin:8px 8px 0;width:calc(100% - 16px);border-radius:20px;overflow:hidden}
+html[data-brand="brons"] main>header:first-child h1{color:var(--b-ink) !important;font-weight:500;letter-spacing:-.04em}
+html[data-brand="brons"] main>header:first-child h1+p{color:#2a2a30 !important}
+html[data-brand="brons"] main>header:first-child p.text-white\/70,html[data-brand="brons"] main>header:first-child figcaption{color:#3d3d45 !important}
+html[data-brand="brons"] main>header:first-child blockquote{color:#1f1f24 !important}
+html[data-brand="brons"] main>header:first-child figure.border-l-2{border-color:rgba(19,19,19,.25) !important}
+html[data-brand="brons"] main>header:first-child .bg-linear-to-t{background:linear-gradient(90deg,rgba(236,234,255,.82) 0%,rgba(236,234,255,.55) 38%,rgba(236,234,255,0) 62%) !important}
+@media (max-width:767px){html[data-brand="brons"] main>header:first-child .bg-linear-to-t{background:linear-gradient(180deg,rgba(236,234,255,.85) 0%,rgba(236,234,255,.6) 45%,rgba(236,234,255,.1) 75%) !important}}
+html[data-brand="brons"] main>header:first-child .bg-glass{background:rgba(255,255,255,.55) !important;border:1px solid rgba(255,255,255,.7)}
+html[data-brand="brons"] main>header:first-child .bg-glass .text-white,html[data-brand="brons"] main>header:first-child .bg-glass .text-white\/80{color:var(--b-ink) !important}
+
+/* navigation over the hero: dark text instead of white */
+html[data-brand="brons"] [data-nav-transparent="true"] :is(a,button,span){color:var(--b-ink) !important}
+html[data-brand="brons"] [data-nav-transparent="true"] .bg-surface-quartenary-100{background:linear-gradient(#0a0a0b,#303036) padding-box,var(--b-edge) border-box !important;border:1.5px solid transparent;color:#fff !important}
+html[data-brand="brons"] [data-nav-transparent="true"] .bg-surface-quartenary-100 *{color:#fff !important}
+html[data-brand="brons"] [data-nav-transparent="true"] .bg-gray-400,html[data-brand="brons"] [data-nav-transparent="true"] [class*="theme-tech:bg-gray-200"]{background-color:var(--b-ink) !important}
+html[data-brand="brons"] nav [data-testid="nav-background"].bg-white{background:rgba(255,255,255,.86) !important;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+
+/* page heroes on inner pages: media panel corners like the reference */
+html[data-brand="brons"] :is(.rounded-2xl,.rounded-3xl).overflow-hidden{border-radius:20px}
+
+/* dark sections: near black with a violet glow */
+html[data-brand="brons"] section.theme-tech{background:var(--b-dark) !important;border-radius:20px;margin:0 8px;position:relative;overflow:hidden}
+html[data-brand="brons"] section.theme-tech::before{content:"";position:absolute;inset:auto -10% -40% 40%;height:90%;background:radial-gradient(closest-side,rgba(87,84,255,.45),rgba(87,84,255,0));pointer-events:none}
+html[data-brand="brons"] section.theme-tech .bg-gray-700{background:var(--b-dark-2) !important;border:1px solid #2a2a30}
+html[data-brand="brons"] #demo .theme-tech{background:radial-gradient(120% 140% at 85% 110%,#3b2fd0 0%,#151419 45%,#0a0a0b 70%) !important;border-radius:20px}
+
+/* bento cards: soft peach and lavender, then saturated indigo, violet and orange */
+html[data-brand="brons"] .bg-bento-mint{background:linear-gradient(56deg,#d7d6ff 7%,#ffe4d6 76%,#eaeaec) !important}
+html[data-brand="brons"] .bg-bento-navy{background:linear-gradient(160deg,#7370ff,#5754ff) !important}
+html[data-brand="brons"] .bg-bento-plum{background:linear-gradient(160deg,#cb47ff,#7c3aed) !important}
+html[data-brand="brons"] .bg-bento-amber{background:linear-gradient(160deg,#ff8847,#ff5f6d) !important}
+
+/* metrics: indigo-to-violet numbers */
+html[data-brand="brons"] :is(.text-headline-xl,.text-headline-lg,.text-headline-md).text-green-500,html[data-brand="brons"] .tabular-nums.text-green-500{background:linear-gradient(90deg,#5754ff,#cb47ff);-webkit-background-clip:text;background-clip:text;color:transparent !important}
+
+/* final call to action: dark panel with an aurora along the bottom */
+html[data-brand="brons"] .cta-block{background:var(--b-dark) !important;border-radius:20px;margin:0 8px 8px;overflow:hidden;position:relative}
+html[data-brand="brons"] .cta-block::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-55%;height:85%;background:radial-gradient(40% 60% at 25% 50%,rgba(255,136,71,.55),transparent 70%),radial-gradient(40% 60% at 55% 50%,rgba(215,112,255,.5),transparent 70%),radial-gradient(40% 60% at 85% 50%,rgba(48,208,236,.45),transparent 70%);filter:blur(30px);pointer-events:none}
+html[data-brand="brons"] .cta-block>div{position:relative;z-index:1}
+html[data-brand="brons"] .cta-block :is(h2,.text-primary){color:#fff !important}
+html[data-brand="brons"] .cta-block .text-secondary{color:#a1a1aa !important}
+html[data-brand="brons"] .cta-block .border-boh{border-color:rgba(255,255,255,.7) !important;color:#fff !important}
+
+/* footer: dark rounded panel */
+html[data-brand="brons"] footer.bg-secondary{background:var(--b-dark) !important;border-radius:20px;margin:8px;color:#e4e4e7}
+html[data-brand="brons"] footer :is(.text-secondary,.text-primary,.text-gray-350){color:#d4d4d8 !important}
+html[data-brand="brons"] footer h3{color:#898994 !important;border-bottom:1px solid #2a2a30;padding-bottom:12px}
+html[data-brand="brons"] footer a:hover{color:#fff !important}
+html[data-brand="brons"] footer .text-green-500{color:#fff !important}
+
+/* consent banner and focus ring in the accent */
+html[data-brand="brons"] [role="dialog"] button:first-of-type{background:var(--b-dark) !important}
+html[data-brand="brons"] :focus-visible{outline-color:var(--b-indigo) !important}
+
+/* logo in ink like the reference; the console scroll section on the canvas instead of white */
+html[data-brand="brons"] a[aria-label="Homepage"]{color:var(--b-ink) !important}
+html[data-brand="brons"] footer a[aria-label="Homepage"]{color:#fff !important}
+html[data-brand="brons"] .bg-agent-studio{background-color:var(--b-canvas) !important}
+html[data-brand="brons"] .bg-agent-studio .to-white,html[data-brand="brons"] .from-white{--tw-gradient-to:var(--b-canvas);--tw-gradient-from:var(--b-canvas)}

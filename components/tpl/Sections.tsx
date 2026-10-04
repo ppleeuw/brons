@@ -211,7 +211,7 @@ export function LogoStripSection({ s, lang, compact = false }: { s: LogoStrip; l
 /* ---------- CTA (home S10) ---------- */
 export function CTABlock({ c, lang }: { c: CTASection; lang: string }) {
   return (
-    <Section z={1}>
+    <Section z={1} className="cta-block">
       <div className="mx-auto flex max-w-5xl flex-col gap-6">
         <h2 className="w-full text-center text-headline-lg text-primary">{c.title}</h2>
         <p className="mx-auto w-full max-w-prose text-center text-body-sm text-balance whitespace-pre-wrap text-secondary xl:max-w-[560px]">{c.text}</p>

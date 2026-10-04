@@ -54,7 +54,7 @@ export default function DemoBooking({ d, logos, lang }: { d: Site["demo"]; logos
             ) : GOOGLE_BOOKING_EMBED ? (
               <>
                 {/* Google Calendar appointment schedule: visitors pick any free slot in the founder calendar */}
-                <iframe src={GOOGLE_BOOKING_EMBED} title={d.booking.title} loading="lazy" className="mt-6 h-[720px] w-full rounded-2xl border-0 bg-white" />
+                <iframe src={GOOGLE_BOOKING_EMBED} title={d.booking.title} loading="lazy" className="mt-6 w-full rounded-2xl border-0 bg-white" style={{ height: 720 }} />
                 <div className="mt-4 flex flex-col items-center gap-2">
                   <a className="text-label-md text-secondary underline underline-offset-4 hover:text-brand-primary" href={d.booking.fallback.href} target="_blank" rel="noopener noreferrer">{d.booking.fallback.label}</a>
                   <p className="text-label-sm text-secondary">{d.booking.note}</p>

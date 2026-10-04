@@ -72,5 +72,10 @@ if (brand.key !== NEKAF.key) {
   console.log("brand", brand.name, "applied to", touched, "files");
 }
 for (const e of fs.readdirSync("out")) if (/^og-/.test(e)) fs.rmSync(path.join("out", e), { recursive: true, force: true });
+/* each brand ships only its own photo and clip set: Brons uses assets-brons and media-brons, Nekaf the originals */
+const drop = brand.key === NEKAF.key
+  ? ["assets-brons", "media-brons"]
+  : ["media", "assets/gen", ...["frontdesk", "workshop", "lift", "tireshop", "team", "dealer", "bodyshop"].map((k) => `assets/img-${k}.webp`)];
+for (const p of drop) fs.rmSync(path.join("out", p), { recursive: true, force: true });
 if (process.env.CUSTOM_DOMAIN) fs.writeFileSync(path.join("out", "CNAME"), process.env.CUSTOM_DOMAIN.trim() + "\n");
 if (brand.key !== NEKAF.key) require("./favicon").writeFavicons("out", brand.primary).then(() => console.log("favicons", brand.name));

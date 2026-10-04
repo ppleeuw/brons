@@ -13,11 +13,12 @@ const rgb = (hex) => [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).joi
 const card = (title, desc, site) => `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:GT;src:url(${fontUrl('GT_America_Standard_Regular-s.p.1zc5t_gvwny95.woff2')}) format('woff2');font-weight:400}
 @font-face{font-family:Fraunces;src:url(${fontUrl('fraunces-500-latin.woff2')}) format('woff2');font-weight:500}
-html,body{margin:0;width:1200px;height:630px;background:${brand.dark};color:#fff;font-family:GT,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+@font-face{font-family:Figtree;src:url(${fontUrl('figtree-latin.woff2')}) format('woff2');font-weight:400 600}
+html,body{margin:0;width:1200px;height:630px;background:${brand.dark};color:#fff;font-family:${brand.key === 'brons' ? 'Figtree' : 'GT'},Arial,sans-serif;-webkit-font-smoothing:antialiased}
 .wrap{position:relative;box-sizing:border-box;width:1200px;height:630px;padding:60px 72px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
 .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:28px 28px;opacity:.5}
 .glow{position:absolute;right:-220px;bottom:-260px;width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,${brand.accent} 0%,rgba(${rgb(brand.accent)},0) 62%);opacity:.45}
-.logo{position:relative;display:flex;align-items:baseline;font-size:44px;font-family:Fraunces,Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1;font-variation-settings:"opsz" 144,"SOFT" 50}
+.logo{position:relative;display:flex;align-items:baseline;font-size:44px;font-family:${brand.key === 'brons' ? 'Figtree,sans-serif;font-weight:600;letter-spacing:-.04em' : 'Fraunces,Georgia,serif;font-weight:500'};letter-spacing:-.01em;line-height:1;font-variation-settings:"opsz" 144,"SOFT" 50}
 .logo svg{width:.78em;height:.78em;margin-right:.14em;transform:translateY(.06em);overflow:visible}
 h1{position:relative;margin:0;font-size:${title.length > 48 ? 58 : 72}px;font-weight:400;letter-spacing:-.02em;line-height:1.05;max-width:1000px;text-wrap:balance}
 p{position:relative;margin:18px 0 0;font-size:26px;line-height:1.35;color:rgba(255,255,255,.78);max-width:900px}
